@@ -18,5 +18,3 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
     console.log("fine")
 })
-
-// mongodb+srv://Emran_dev:wMPSF369d9TznubK@cluster0.5xewomm.mongodb.net/?
