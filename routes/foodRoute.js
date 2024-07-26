@@ -9,12 +9,15 @@ const foodRouter = express.Router();
 
 const storage = multer.diskStorage({
     destination: "uploads",
-    filename: (req, file, cb)=> {
-        return cd(null,`${Date.now()}`)
+    filename: (req, file, cb) => {
+        return cd(null, `${Date.now()}${file.originalname}`)
     }
 })
 
-foodRouter.post("/add", addFood)
+
+const upload = multer({ storage: storage })
+
+foodRouter.post("/add", upload.single("image"), addFood)
 
 
 export default foodRouter;  
