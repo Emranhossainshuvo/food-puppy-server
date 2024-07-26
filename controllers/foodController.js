@@ -21,7 +21,7 @@ const addFood = async (req, res) => {
     }
     catch (error) {
         console.log("error :-", error);
-        res.json({ success: false, message: "Error" })
+        res.json({ success: false, message: "Error from addFood fn" })
     }
 
 
@@ -29,7 +29,13 @@ const addFood = async (req, res) => {
 
 // all food list
 const listFood = async (req, res) => {
-    
+    try {
+        const foods = await foodModel.find({});
+        res.json({ success: true, data: foods })
+    } catch (error) {
+        console.log(error);
+        res.json({success:false, message:"Error from listFood fn"})
+    }
 }
 
 
