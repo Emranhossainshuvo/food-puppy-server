@@ -17,13 +17,13 @@ const addToCart = async (req, res) => {
 
     } catch (error) {
         console.log(error);
-        res.json({ success: true, message: "Something went wrong!!" })
+        res.json({ success: false, message: "Something went wrong!!" })
     }
 };
 
 // remove from cart function for users
 const removeFromCart = async (req, res) => {
-
+    
 }
 
 // get cart function for users
