@@ -48,6 +48,8 @@ const placeOrder = async (req, res) => {
             cancel_url:`${frontend_url}/verify?success=false&orderId=${newOrder._id}`,
         })
 
+        res.json({success:true,success_url:session?.url})
+
     } catch (error) {
 
     }
