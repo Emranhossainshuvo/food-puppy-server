@@ -83,4 +83,8 @@ const userOrders = async (req, res) => {
     }
 }
 
-export { placeOrder, verifyOrder, userOrders };
+const listOrders = async (req, res) => {
+    
+}
+
+export { placeOrder, verifyOrder, userOrders, listOrders };
