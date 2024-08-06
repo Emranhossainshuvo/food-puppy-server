@@ -23,11 +23,11 @@ const placeOrder = async (req, res) => {
             price_data: {
                 currency: "inr",
                 product_data: {
-                    name: item?.name
+                    name: item.name
                 },
-                unit_amount: item?.price * 100 * 80
+                unit_amount: item.price * 100 * 80
             },
-            quantity: item?.quantity
+            quantity: item.quantity
         }));
 
         line_items.push({
@@ -48,7 +48,7 @@ const placeOrder = async (req, res) => {
             cancel_url: `${frontend_url}/verify?success=false&orderId=${newOrder._id}`,
         })
 
-        res.json({ success: true, success_url: session?.url })
+        res.json({ success: true, session_url: session.url })
 
     } catch (error) {
         console.log(error);
@@ -56,5 +56,8 @@ const placeOrder = async (req, res) => {
     }
 };
 
+const verifyOrder = async (req, res) => {
+    
+}
 
-export { placeOrder };
+export { placeOrder, verifyOrder };
